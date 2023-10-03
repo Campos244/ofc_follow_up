@@ -3,10 +3,11 @@ import { salva } from "./contas.repository.mjs";
 import { lista } from "./contas.repository.mjs";
 
 
-criaUsuario("BeatrizLindona", "beatriz@emial.com", "senha");
-criaUsuario("Beatriz fofa", "beatriz@miaumiau.com", "senha123");
-criaUsuario("Beatriz fofa", "beatriz", "far");
-criaUsuario("Tati Neguinha do roseira", "tati.24rsaazuis@aesperadafelicidade.com", "tati tatonilda testilson")
+criaUsuario("Maria Santana", "santanaMarina@email.com", "senha");
+criaUsuario("Beatriz Campos", "beatriz@gmail.com", "senha123");
+criaUsuario("Pandinha fofa", "panda", "far");
+criaUsuario("Tatiane Campos", "tati.24@outlook.com", "tatitatonilda")
+criaUsuario("Alura Alurinha Alurona", "alura@alura.com", "cael")
 salva();
 lista();
 

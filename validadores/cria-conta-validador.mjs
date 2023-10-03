@@ -1,9 +1,6 @@
 // @ts-ignore
 import lista from "../dados/contas.json" assert { type: "json" };
 
-
-let temErro = false;
-
 let erros = [];
 
 function criaContaValidador(lista) {
@@ -15,12 +12,6 @@ function criaContaValidador(lista) {
             email: validarEmail(objeto.email),
             senha: validarSenha(objeto.senha)
         };
-
-        if (dados.temErro) {
-            temErro = true;
-            erros.push(...dados.erros);
-        }
-
         return dados;
     });
 
@@ -32,9 +23,8 @@ function validarSenha(senha) {
     if (typeof senha === 'string' && senha.length >= 8) {
         return senha;
     } else{
-        temErro = true;
-        erros.push({ campo: "Senha", mensagem: "Senha menor que oito dígitos." });
-        return false;
+        return ({ temErro: true, campo: "Senha", 
+        mensagem: "Senha menor que oito dígitos." });
     }
 }
 
@@ -43,9 +33,8 @@ function validarEmail(email) {
     if (regexEmail.test(email) == true) {
         return email;
     }else{
-        temErro = true;
-        erros.push({campo: "Email", mensagem: "Email inválido"})
-        return false;
+        return ({ temErro: true, campo: "Email", 
+        mensagem: "Email inválido"});
     }
     
 }
@@ -54,13 +43,13 @@ function validarNome(nome) {
     if (typeof nome === 'string' && nome.trim() !== "") {
         return nome;
     }else{
-        temErro = true;
-        erros.push({campo: "Nome", mensagem: "Nome não pode ser vazio"})
-        return false;
+        return ({temErro: true, campo: "Nome", 
+        mensagem: "Nome não pode ser vazio"});
     }
     }
     
 
-criaContaValidador(lista);
+criaContaValidador(lista)
+
 
 
