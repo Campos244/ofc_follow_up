@@ -15,6 +15,8 @@ constructor (nome, email,senha) {
     this.data = new Date();
     this.id = uuidv4();
 }
+
+
 }
 
 const usuario = new EntidadeConta()
