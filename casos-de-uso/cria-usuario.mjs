@@ -1,22 +1,16 @@
-import { v4 as uuidv4 } from 'uuid';
+
 import { EntidadeConta } from "../entidades/conta.entity.mjs";
+import { ContaRepository } from "../dados/contas.repository.mjs";
 
-let listaContas = []
+export class CriaUsuario{
+    constructor(ContaRepository){
+        this.ContaRepository = ContaRepository;
+    }
 
-export function criaUsuario(nome, email, senha) {
-    const usuario = new EntidadeConta(nome, email,senha)
-    /*const data = new Date();
-    const id = uuid();
+    executa(nome, email, senha){
+        const novoUsuario = new EntidadeConta(nome, email, senha);
+        this.ContaRepository.salva(novoUsuario);
+        return this.ContaRepository.lista();
+    }
 
-    const usuario = {
-        nome: nome,
-        email: email,
-        senha: senha,
-        dataCriacao: data,
-        id: id
-    };*/
-
-    listaContas.push(usuario);
-
-    return listaContas;
 }
