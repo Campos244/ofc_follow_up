@@ -1,6 +1,6 @@
-import { CriaUsuario } from "../casos-de-uso/cria-usuario.mjs";
-import { salva } from "./contas.repository.mjs";
-import { lista } from "./contas.repository.mjs";
+import { CriaUsuario }  from "../casos-de-uso/cria-usuario.mjs";
+import { ContaRepository } from "../dados/contas-repository.mjs";
+
 
 
 /*criaUsuario("Maria Santana", "santanaMarina@email.com", "senha");
@@ -21,5 +21,8 @@ criaUsuarioCasoDeUso.executa('João', 'joao@email.com', 'senha123')
     .then((texto) => console.log(texto))
     .catch((error) => console.error(error));
 
+    criaUsuarioCasoDeUso.executa('Bia', 'bea@email.com', 'senha123')
+    .then((texto) => console.log(texto))
+    .catch((error) => console.error(error));
 
 
