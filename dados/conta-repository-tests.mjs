@@ -15,9 +15,9 @@ lista();*/
 
 
 const contaRepo = new ContaRepository();
-const criaUsuarioCasoDeUso = new CriaUsuario(contaRepo);
+export const criaUsuarioCasoDeUso = new CriaUsuario(contaRepo);
 
-criaUsuarioCasoDeUso.executa('João', 'joao@email.com', 'senha123')
+    criaUsuarioCasoDeUso.executa('João', 'joao@email.com', '')
     .then((texto) => console.log(texto))
     .catch((error) => console.error(error));
 
