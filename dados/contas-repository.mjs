@@ -1,5 +1,6 @@
 import { CriaUsuario } from "../casos-de-uso/cria-usuario.mjs";
-import { error } from "console";
+/*import { error } from "console";
+import { EntidadePublicacao } from "../entidades/conta.entity.mjs";*/
 import fs from "fs";
 
 /*export function salva() {
@@ -48,3 +49,19 @@ export class ContaRepository {
     }
 }
 
+export class Postagens {
+    constructor() {
+        this.listaPostagens = [];
+    }
+
+    posta(novaPostagem) {
+        this.listaPostagens.push(novaPostagem)
+        const publicaçaoPostada = JSON.stringify(this.listaPostagens)
+        try {
+            fs.writeFileSync('dados/publicacoes.json', publicaçaoPostada);
+            console.log('Arquivo de publicações salvo com sucesso!');
+        } catch (error) {
+            console.error('Erro ao salvar o arquivo de publicações:', error);
+        }
+    }
+}
