@@ -1,6 +1,6 @@
 import { CriaUsuario }  from "../casos-de-uso/cria-usuario.mjs";
-import { ContaRepository } from "../dados/contas-repository.mjs";
-
+import { ContaRepository, Postagens } from "../dados/contas-repository.mjs";
+import { CriaPostagem } from "../casos-de-uso/cria-usuario.mjs";
 
 
 /*criaUsuario("Maria Santana", "santanaMarina@email.com", "senha");
@@ -17,6 +17,9 @@ lista();*/
 const contaRepo = new ContaRepository();
 export const criaUsuarioCasoDeUso = new CriaUsuario(contaRepo);
 
+const postagens = new Postagens();
+const criaPostagemCasoDeUso = new CriaPostagem(postagens);
+
     criaUsuarioCasoDeUso.executa('João', 'joao@email.com', '')
     .then((texto) => console.log(texto))
     .catch((error) => console.error(error));
@@ -24,5 +27,12 @@ export const criaUsuarioCasoDeUso = new CriaUsuario(contaRepo);
     criaUsuarioCasoDeUso.executa('Bia', 'bea@email.com', 'senha123')
     .then((texto) => console.log(texto))
     .catch((error) => console.error(error));
+
+    criaUsuarioCasoDeUso.executa('Lorena', '@.com', 's123')
+    .then((texto) => console.log(texto))
+    .catch((error) => console.error(error));
+
+    const publicacaoSalva = criaPostagemCasoDeUso.executaPostagem('João', 'Olá, essa é a minha primeira postagem!');
+        console.log('Publicação salva:', publicacaoSalva);
 
 
