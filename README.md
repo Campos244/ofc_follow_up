@@ -5,3 +5,4 @@ Estudos para back-end
 -Modificação de informações em arquivos JSON utilizando Javascript;
 -Criação de classes;
 -Injeção de classes;
+-Validação;
