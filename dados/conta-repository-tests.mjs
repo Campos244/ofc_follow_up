@@ -18,7 +18,7 @@ const contaRepo = new ContaRepository();
 export const criaUsuarioCasoDeUso = new CriaUsuario(contaRepo);
 
 const postagens = new Postagens();
-const criaPostagemCasoDeUso = new CriaPostagem(postagens);
+export const criaPostagemCasoDeUso = new CriaPostagem(postagens);
 
     criaUsuarioCasoDeUso.executa('João', 'joao@email.com', '')
     .then((texto) => console.log(texto))
@@ -28,7 +28,7 @@ const criaPostagemCasoDeUso = new CriaPostagem(postagens);
     .then((texto) => console.log(texto))
     .catch((error) => console.error(error));
 
-    criaUsuarioCasoDeUso.executa('Lorena', '@.com', 's123')
+    criaUsuarioCasoDeUso.executa('Lorena', 'lorena@email.com.br', 's123')
     .then((texto) => console.log(texto))
     .catch((error) => console.error(error));
 

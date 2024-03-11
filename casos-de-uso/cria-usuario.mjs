@@ -1,9 +1,6 @@
 import { EntidadeConta } from "../entidades/conta.entity.mjs";
 import { ContaRepository } from "../dados/contas-repository.mjs";
-/*import { EntidadePublicacao } from "../entidades/conta.entity.mjs";
-
-import { Postagens } from "../dados/contas-repository.mjs";*/
-
+import { EntidadePublicacao } from "../entidades/publishing_entity.mjs";
 
 export class CriaUsuario {
     constructor(ContaRepository) {
@@ -25,7 +22,7 @@ export class CriaPostagem {
     }
 
     executaPostagem(autor, mensagem) {
-        const novaPostagem = { autor, mensagem };
+        const novaPostagem = new EntidadePublicacao(autor, mensagem)
         this.postagens.posta(novaPostagem);
         return novaPostagem;
     }

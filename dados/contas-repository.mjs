@@ -28,6 +28,7 @@ import fs from "fs";
 export class ContaRepository {
     constructor() {
         this.listaContas = [];
+       
     }
 
     salva(usuario) {

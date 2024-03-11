@@ -16,18 +16,5 @@ export class EntidadeConta {
     }
 }
 
-export class EntidadePublicacao {
-    autor;
-    id;
-    mensagem;
-    dataPublicacao;
 
-    constructor(autor, mensagem, dataPublicacao){
-        this.autor = autor;
-        this.id = uuidv4();
-        this.mensagem = mensagem
-        this.dataPublicacao = new Date();
-    }
-
-}
 
