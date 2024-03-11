@@ -6,5 +6,5 @@ Estudos para back-end
 -  Criação de classes;
 - Injeção de classes;
 - Validação;
-- Assíncronismo;
+- Assincronismo;
 - 
