@@ -7,4 +7,3 @@ Estudos para back-end
 - Injeção de classes;
 - Validação;
 - Assincronismo;
-- 
